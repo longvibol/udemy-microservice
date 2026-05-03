@@ -1,0 +1,20 @@
+1- command property in spring boot
+
+https://docs.spring.io/spring-boot/appendix/application-properties/index.html
+
+2- Maven Central
+
+https://central.sonatype.com/
+
+
+
+
+
+
+
+
+
+
+
+
+
