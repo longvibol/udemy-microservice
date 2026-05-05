@@ -1,0 +1,146 @@
+1- address table 
+
+package com.app.ecom.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@Entity(name = "addresses")
+public class Address {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String street;
+    private String city;
+    private String state;
+    private String country;
+    private String zipcode;
+}
+
+
+2- update user with relationship address 
+
+"1 user have 1 address" 
+
+@Data
+@NoArgsConstructor
+@Entity(name = "user_table")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private UserRole role = UserRole.CUSTOMER;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
+}
+
+
+-  @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true) : relation ship 1 to 1; CascadeType.ALL : create and update ; orphanRemoval = true : deled it will also delet from address table
+
+-  @JoinColumn(name = "address_id", referencedColumnName = "id") : address_id is the forentkey (ការចំណាំងទៅ តារាងមួយទៀត ហើយវាត្រូវបានបង្កើតនៅក្នុង table user នឹង
+
+មានន័យថា table address វាមាន ឈ្មោះ address_id នៅក្នុង table user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
