@@ -5,7 +5,7 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:test
+    url: jdbc:h2:mem:testDb
     driver-class-name: org.h2.Driver
     username: test
     password: ""
@@ -13,3 +13,10 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+
+-----------------------------------------
+
+hibernate:
+      ddl-auto: create
+
+បង្កើត table when it start

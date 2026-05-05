@@ -1,0 +1,55 @@
+- JPA stands for Jakarta Persistence API
+
+Key Facts about JPA
+
+- Purpose: It is a standard specification for Object-Relational Mapping (ORM), which allows developers to manage relational data in Java applications using objects instead of direct SQL.
+
+ដើម្បីអោយអ្នកប្រើប្រាស់ធ្វើការទំនាក់ទំនងជាមួយ Database ជំនួសដោយការសរសេរ Query ហើយត្រូវបាន Follow ORM 
+
+- Transition: In 2019, the technology moved from the Java EE platform to Jakarta EE, leading to the name change from Java to Jakarta.
+
+- Implementations: JPA itself is a set of interfaces and guidelines. Popular implementations (or providers) that put these rules into practice include Hibernate, EclipseLink, and Apache OpenJPA.
+
+- Core Components: It includes the Jakarta Persistence Query Language (JPQL), the jakarta.persistence package, and metadata for mapping Java classes to database tables.
+
+
+-------------------------------------------------------------
+
+==> សរុបដើម្បីធ្វើការបង្កើត crud operation 
+
+@Data
+@NoArgsConstructor
+@Entity(name = "user_table")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String firstName;
+
+    private String lastName;
+}
+
+- @Entity(name = "user_table") : create table name 
+- @NoArgsConstructor : បង្កើត constructor ដែលគ្នាម parameter inside 
+- @Data : create getter and setter 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

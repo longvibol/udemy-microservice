@@ -1,0 +1,148 @@
+1- Add dependency jpa 
+
+<dependency>
+
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-h2console</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+2- property 
+
+spring:
+  application:
+    name: ecom-application
+
+  datasource:
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    username: test
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+3- crate table user 
+
+package com.app.ecom;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+//@AllArgsConstructor
+//@Entity(name = "user_table")
+@Data
+@NoArgsConstructor
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String firstName;
+
+    private String lastName;
+}
+
+4- JPA Repositories
+
+A repository is an interface that allows us to perform various operations involving database, such
+
+as create, read, update and deleting records without writing any sort of boilerplate code.
+
+
+- Create Repository layer 
+
+Create interface and extends the JpaRepository ដោយសារតែយើងចង់ធ្វើការ Update, deled ... ចឹងមានន័យថាយើងធ្វើការ
+ទៅនឹង Database 
+
+----------------------------
+
+package com.app.ecom;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+}
+ 
+------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
