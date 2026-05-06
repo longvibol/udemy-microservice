@@ -15,6 +15,9 @@ import org.jspecify.annotations.Nullable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -153,49 +156,48 @@ public class CartService {
         return true;
     }
 
-    public CartRespone getCartById(String userId, String cartId) {
+    public List<CartRespone> getCartById(String userId) {
 
-        Long cartItemId = Long.valueOf(cartId);
         Long userIdLong = Long.valueOf(userId);
 
-        Optional<CartItem> cartItemOpt =
-                cartItemRepository.findById(cartItemId);
+        Optional<User> userOpt = userRepository.findById(userIdLong);
 
-        Optional<User> userOpt =
-                userRepository.findById(userIdLong);
-
-        // Check if cart item or user exists
-        if (cartItemOpt.isEmpty() || userOpt.isEmpty()) {
-            return null;
+        // Check if user exists
+        if (userOpt.isEmpty()) {
+            return Collections.emptyList();
         }
 
-        CartItem cartItem = cartItemOpt.get();
         User user = userOpt.get();
 
-        // Check ownership
-        if (!cartItem.getUser().getId().equals(user.getId())) {
-            return null;
+        // Get all cart items for this user
+        List<CartItem> cartItems = cartItemRepository.findByUser(user);
+
+        // Convert CartItem list -> CartRespone list
+        List<CartRespone> responses = new ArrayList<>();
+
+        for (CartItem cartItem : cartItems) {
+
+            CartRespone response = new CartRespone();
+
+            response.setCartId(cartItem.getId());
+
+            if (cartItem.getProduct() != null) {
+                response.setProductId(cartItem.getProduct().getId());
+                response.setProductName(cartItem.getProduct().getName());
+            }
+
+            response.setQuantity(cartItem.getQuantity());
+
+            response.setTotalPrice(
+                    cartItem.getPrice()
+                            .multiply(BigDecimal.valueOf(cartItem.getQuantity()))
+                            .intValue()
+            );
+
+            responses.add(response);
         }
 
-        // Build response
-        CartRespone response = new CartRespone();
-
-        response.setCartId(cartItem.getId());
-
-        if (cartItem.getProduct() != null) {
-            response.setProductId(cartItem.getProduct().getId());
-            response.setProductName(cartItem.getProduct().getName());
-        }
-
-        response.setQuantity(cartItem.getQuantity());
-
-        // total price
-        response.setTotalPrice(
-                cartItem.getPrice()
-                        .multiply(BigDecimal.valueOf(cartItem.getQuantity()))
-                        .intValue()
-        );
-        return response;
+        return responses;
     }
 
 
