@@ -1,0 +1,6 @@
+1- Create model or Entity 
+
+2- Create Repository 
+
+
+
