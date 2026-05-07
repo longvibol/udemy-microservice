@@ -1,0 +1,146 @@
+1- Order តើការបញ្ចារទិញមាន file ey klas 
+
+package com.app.ecom.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@Data
+@Entity(name = "orders")
+@NoArgsConstructor
+public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    private BigDecimal totalAmount;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status = OrderStatus.PENDING;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderItem> items = new ArrayList<>();
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    @CreationTimestamp
+    private LocalDateTime updatedAt;
+
+}
+
+
+2- order status :Enum នៅក្នុង order 
+
+package com.app.ecom.model;
+
+public enum OrderStatus {
+    PENDING,
+    CONFIRMED,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED
+}
+
+
+3- OrderItem នៅក្នុង order នឹងវាមាន ទិញអ្វីខ្លះ
+
+
+package com.app.ecom.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Data
+@Entity
+@NoArgsConstructor
+public class OrderItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
+
+    private Integer quantity;
+
+    private BigDecimal price;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;
+
+}
+
+---------------------------------
+
+
+4- Create controller order 
+
+@PostMapping
+    public ResponseEntity<OrderResponse> createOrder(
+            @RequestHeader("X-User-ID") String userId) {
+
+        OrderResponse order = orderService.createOrder(userId);
+
+        if(order == null){
+            return ResponseEntity.notFound().build();
+        }
+
+        return new ResponseEntity<>(order, HttpStatus.CREATED);
+    }
+
+យើងត្រូវការតែ User ទេដើម្បីធ្វើការ ដាក់ចូលក្នុង Order(​ ដើម្បីធ្វើការបញ្ជាទិញ Items អ្វីនេះយើងត្រូវការតែ លេខ Id នឹងទៅបានហើយ) 
+
+-  @RequestHeader("X-User-ID") String userId)
+
+
+5- Create Service Order : 
+
+        // Validate user
+        // Validate for cart items (what we have add)
+        // Calculate total price of order
+        // Create order
+        // Clear the cart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
