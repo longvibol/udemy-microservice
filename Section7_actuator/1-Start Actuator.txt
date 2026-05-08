@@ -1,0 +1,68 @@
+1- Add dependency 
+
+ <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+2- add property 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+3- End point check 
+
+http://localhost:8080/actuator/health
+
+
+{
+"components": {
+"db": {
+"details": {
+"database": "H2",
+"validationQuery": "isValid()"
+},
+"status": "UP"
+},
+"diskSpace": {
+"details": {
+"total": 349632389120,
+"free": 77042786304,
+"threshold": 10485760,
+"path": "C:\\Users\\home\\Desktop\\UdemyCourse\\udemy-microservice\\softcode\\ecom-application\\.",
+"exists": true
+},
+"status": "UP"
+},
+"livenessState": {
+"status": "UP"
+},
+"ping": {
+"status": "UP"
+},
+"readinessState": {
+"status": "UP"
+},
+"ssl": {
+"details": {
+"expiringChains": [],
+"invalidChains": [],
+"validChains": []
+},
+"status": "UP"
+}
+},
+"groups": [
+"liveness",
+"readiness"
+],
+"status": "UP"
+}
+
+

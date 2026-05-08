@@ -1,0 +1,91 @@
+-Shut down
+
++ shutdown endpoint, I mentioned graceful shutdown. បិទតាមធម្មតា
+
+Now by graceful shutdown we mean that it will complete all the ongoing requests before the actual shutdown
+
+takes place and it will terminate gracefully.
+
+
+1- Add property to enable shutdown 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+
+
+
+- End point : http://localhost:8080/actuator/shutdown
+
+We need to use POST method : and not body 
+
+then after that it will send the message :
+
+
+{
+    "message": "Shutting down, bye..."
+}
+
+-------------------Graceful shutdown complete
+
+Log file
+
+
+ Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-08T09:54:45.063+07:00  INFO 23924 --- [ecom-application] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-08T09:54:45.073+07:00  INFO 23924 --- [ecom-application] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-08T09:54:45.081+07:00  WARN 23924 --- [ecom-application] [       Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-240]
+2026-05-08T09:54:45.082+07:00  INFO 23924 --- [ecom-application] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-08T09:54:45.083+07:00  INFO 23924 --- [ecom-application] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+
+------------------------------------------------------ 
+
+* Anabel shutdown graceful
+
+server:
+  shutdown: graceful
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+- Application property 
+
+Anabel only the bean : 
+
+-----------------------------------
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: beans
+
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+
+
+==> we change from "*" to beans 
+
+
+-----------------------------------
+
+
+{
+"_links": {
+"self": {
+"href": "http://localhost:8080/actuator",
+"templated": false
+},
+"beans": {
+"href": "http://localhost:8080/actuator/beans",
+"templated": false
+}
+}
+}
+
+or add more :
+
+    web:
+      exposure:
+        include: beans, health, info, shutdown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
