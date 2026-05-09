@@ -1,0 +1,130 @@
+This endpoint we can change log to another level to see : Info, Debug, or trace 
+
+
+
+Logger : check download time 
+
+http://localhost:8080/actuator/loggers
+
+
+
+{
+"levels": [
+"OFF",
+"ERROR",
+
+
+"WARN",  One means when something might cause a problem later on.So if your program detects something that can cause problems later on, it will add that log in the one or as one category.
+
+
+"INFO", this is for general application flow like a startup
+
+
+"DEBUG", More information than the info to see the error 
+
+
+"TRACE"  : is useful for doing detailed logging
+],
+
+-----------------------------------------
+
+
+"com.app.ecom.EcomApplication": {
+"effectiveLevel": "INFO"
+},
+
+
+==> this is the main package that we setup : 
+
+- com.app.ecom
+- EcomApplication : this is the application name 
+
+
+Example to access the end point: 
+
+http://localhost:8080/actuator/loggers/com.app.ecom
+
+==> 
+
+{
+"effectiveLevel": "INFO"
+}
+
+
+-----------------------------------------------------
+
+We can logging dynamicly the level of logging with out the stop from the machine 
+
+- GoToPostMan : 
+
+Create POST : http://localhost:8080/actuator/loggers/com.app.ecom
+
+Body : raw 
+
+{
+    "configuredLevel": "INFO"
+}
+
+
+--> then the end point will change to info : 
+
+We no need to restart the application 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

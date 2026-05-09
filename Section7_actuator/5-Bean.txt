@@ -1,0 +1,107 @@
+Bean End point: http://localhost:8080/actuator/beans
+
+- It list all the spring bean in the application 
+
++ contexts: is the topic  
+
++ ecom-application : is the application context 
+
++ bean : what is inside the conext 
+
++ aliases : name 
+
++ scope : is the singleton or protopty (singleton : វាមានតែមួយទេនៅកន, prototype means a new instance is created every time a bean is requested.)
+ 
+- Spring creates only one object for the whole application "singleton" 
+- Spring creates a new object every time you request the bean "prototype"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

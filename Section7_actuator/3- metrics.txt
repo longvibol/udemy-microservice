@@ -1,0 +1,117 @@
+metrics : គ្រឿងតូចៗក្នុង system ដែលមានទំនាក់ទំនងគ្នា
+
+
+http://localhost:8080/actuator/metrics
+
+
+------------------------ 
+
+"names": [
+"application.ready.time",
+"application.started.time",
+"disk.free",
+"disk.total",
+"executor.active",
+"executor.completed",
+
+
+-------------------
+
+Test end point : http://localhost:8080/actuator/metrics/disk.free
+
+
+{
+"availableTags": [
+{
+"tag": "path",
+"values": [
+"C:\\Users\\home\\Desktop\\UdemyCourse\\udemy-microservice\\softcode\\ecom-application\\."
+]
+}
+],
+"baseUnit": "bytes",
+"description": "Usable space for path",
+"measurements": [
+{
+"statistic": "VALUE",
+"value": 76961824768
+}
+],
+"name": "disk.free"
+}
+
+
+--------------------------------------------------------jvm.info
+
+
+
+"availableTags": [
+{
+"tag": "vendor",
+"values": [
+"Eclipse Adoptium"
+]
+},
+{
+"tag": "runtime",
+"values": [
+"OpenJDK Runtime Environment"
+]
+},
+{
+"tag": "version",
+"values": [
+"25.0.2+10-LTS"
+]
+}
+],
+"description": "JVM version info",
+"measurements": [
+{
+"statistic": "VALUE",
+"value": 1
+}
+],
+"name": "jvm.info"
+}
+
+
+---------------------------------  system.cpu.count
+
+
+{
+"availableTags": [],
+"description": "The number of processors available to the Java virtual machine",
+"measurements": [
+{
+"statistic": "VALUE",
+"value": 8
+}
+],
+"name": "system.cpu.count"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

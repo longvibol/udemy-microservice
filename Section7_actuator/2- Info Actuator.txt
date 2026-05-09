@@ -1,3 +1,29 @@
+1- Add information to the app
+
+End Point : http://localhost:8080/actuator/info
+
+==> Result : 
+
+{
+"app": {
+"name": "E-commerce Application",
+"version": "1.0.0",
+"description": "A simple e-commerce application built with Spring Boot"
+}
+}
+
+
+----------------------------------------
+
+info:
+  app:
+    name: E-commerce Application
+    version: 1.0.0
+    description: A simple e-commerce application built with Spring Boot
+
+----------------------------------------
+
+Hold application : 
 
 
 spring:
@@ -23,13 +49,11 @@ management:
   endpoints:
     web:
       exposure:
-        include: beans, health, info, shutdown
+        include: "*"
 
   endpoint:
     health:
       show-details: always
-    shutdown:
-      enabled: true
 
   info:
     env:
@@ -41,5 +65,15 @@ info:
     version: 1.0.0
     description: A simple e-commerce application built with Spring Boot
 
-server:
-  shutdown: graceful
+
+
+
+
+
+
+
+
+
+
+
+
