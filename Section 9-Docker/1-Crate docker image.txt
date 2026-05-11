@@ -1,0 +1,26 @@
+Create Docker Image from Spring boot
+
+1- Syntax to crate docker image 
+
+>> ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=<IMAGE-NAME>
+
+----------------------------------------------------------
+
+Create docker image from spring boot 
+
+1- Push .jar file to docker 
+
+>> mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=vibollong/ecom-application"
+
+
+mvn spring-boot:build-image "-Dspring-boot.build-image.imageName=vibollong/ecom-application"  
+
+
+2- push the image to the docker hub 
+
+>> docker login 
+
+>> docker push vibollong/ecom-application
+
+
+link : https://hub.docker.com/repositories/vibollong
