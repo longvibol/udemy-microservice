@@ -1,0 +1,105 @@
+1- docker pull <image>
+
+- get the image from docker hub 
+
+2- docker push <username/image>
+
+- push the local image to docker hub 
+
+3- run docker 
+
+>> docker run -it -d -p <host-port>:<container-port> --name <name> <image>
+
+Ex:
+>> docker run -it -d -p 8080:8080 --name ecom vibollong/ecom-application
+
+
+4- stock container 
+
+docker ps 
+
+>> docker stop <container-id/container-name>
+
+
+5- stop container 
+
+>> docker start <container-id/container-name>
+
+
+6- remove container 
+
+>> docker rm <container-id/container-name>
+
+7- remove image and container 
+
+>> docker rmi <image-id/image-name>
+
+
+8-show docker running the container 
+
+>> docker ps
+
+9- show all the docker stop and running 
+
+>> docker ps -a 
+
+
+10- list all the image in pc
+
+>> docker image or docker image ls 
+
+
+11- run terminal inside the container 
+
+>> docker exec -it <container-name/container-id> bash 
+
+
+C:\Users\GE66>docker ps -a
+CONTAINER ID   IMAGE                               COMMAND              CREATED          STATUS                            PORTS     NAMES
+b5b1d10f4327   vibollong/ecom-application          "/cnb/process/web"   12 minutes ago   Exited (143) About a minute ago             ecom
+ca57b09963eb   vibollong/ecom-application:latest   "/cnb/process/web"   28 minutes ago   Exited (143) 24 minutes ago                 boring_keller
+
+- នៅក្នុង spring-boot maven not include it in default to keep application smaller 
+
+- To include a terminal/shell inside the container, create your own Dockerfile using a normal Linux base image.
+
+inside the terminal we can check the version of the jar file or something else :
+
+ex: >> docker exec -it ecom java -version
+
+12- build the image from the docker file 
+
+>> docker build -t <username/image> .
+
+13- check log in current running docker 
+
+>> docker logs <container-name/container-id>
+
+
+14- inspect មើលខាងក្នុង file 
+
+
+>> docker inspect <container-name/container-id>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
