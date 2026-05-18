@@ -1,22 +1,24 @@
 package com.app.ecom.service.cart;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import com.app.ecom.dto.cart.CartItemRequest;
-import com.app.ecom.dto.cart.CartRespone;
 import com.app.ecom.model.CartItem;
 import com.app.ecom.model.Product;
 import com.app.ecom.model.User;
 import com.app.ecom.repository.cart.CartItemRepository;
 import com.app.ecom.repository.product.ProductsRepository;
 import com.app.ecom.repository.user.UserRepository;
+import com.ecommerce.dto.cart.CartRespone;
+
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

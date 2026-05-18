@@ -1,4 +1,4 @@
-package com.app.ecom.service.cart;
+package com.ecommerce.order.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -8,17 +8,19 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.app.ecom.dto.cart.CartItemRequest;
-import com.app.ecom.dto.cart.CartRespone;
-import com.app.ecom.repository.cart.CartItemRepository;
-import com.app.ecom.repository.product.ProductsRepository;
-import com.app.ecom.repository.user.UserRepository;
+import com.ecommerce.order.dto.CartItemRequest;
+import com.ecommerce.order.dto.CartRespone;
+import com.ecommerce.order.dto.UserRepository;
 import com.ecommerce.order.model.CartItem;
 import com.ecommerce.order.model.Product;
 import com.ecommerce.order.model.User;
+import com.ecommerce.order.repository.CartItemRepository;
+import com.ecommerce.order.repository.ProductsRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+
+
 
 @Service
 @RequiredArgsConstructor
