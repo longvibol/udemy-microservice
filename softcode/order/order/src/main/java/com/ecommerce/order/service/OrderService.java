@@ -6,11 +6,9 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.app.ecom.repository.user.UserRepository;
-import com.app.ecom.service.cart.CartService;
-import com.app.ecom.service.user.UserService;
 import com.ecommerce.order.dto.OrderItemDTO;
 import com.ecommerce.order.dto.OrderResponse;
+import com.ecommerce.order.dto.UserRepository;
 import com.ecommerce.order.model.CartItem;
 import com.ecommerce.order.model.Order;
 import com.ecommerce.order.model.OrderItem;

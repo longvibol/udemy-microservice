@@ -1,17 +1,19 @@
-package com.app.ecom.service.user;
-
-import com.app.ecom.dto.address.AddressDTO;
-import com.app.ecom.dto.user.UserRequest;
-import com.app.ecom.dto.user.UserResponse;
-import com.app.ecom.model.Address;
-import com.app.ecom.model.User;
-import com.app.ecom.repository.user.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+package com.ecommerce.order.service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.order.dto.AddressDTO;
+import com.ecommerce.order.dto.UserRepository;
+import com.ecommerce.order.dto.UserRequest;
+import com.ecommerce.order.dto.UserResponse;
+import com.ecommerce.order.model.Address;
+import com.ecommerce.order.model.User;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
