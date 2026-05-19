@@ -1,20 +1,32 @@
 spring:
   application:
     name: product-service
-server:
-  port: 8081
-
-  h2:
-    console:
-      enabled: true
-
   datasource:
-    url: jdbc:h2:mem:test
-    driver-class-name: org.h2.Driver
-    username: test
-    password: ""
-
+    url: jdbc:postgresql://localhost:5432/productdb
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: 8081
+
+#  h2:
+#    console:
+#      enabled: true
+#
+#  datasource:
+#    url: jdbc:h2:mem:test
+#    driver-class-name: org.h2.Driver
+#    username: test
+#    password: ""
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
