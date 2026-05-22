@@ -39,7 +39,7 @@ public class UserController {
 
     @PutMapping("update/{id}")
     public ResponseEntity<String> updateUser(
-            @PathVariable Long id,
+            @PathVariable String id,
             @RequestBody UserRequest updateUserRequest) {
 
         boolean updated = userService.updateUser(id, updateUserRequest);
@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<String> deleteUser(@PathVariable String id) {
         boolean deleted = userService.deleteUser(id);
 
         if (deleted) {
@@ -63,7 +63,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponse> getUser(@PathVariable Long id) {
+    public ResponseEntity<UserResponse> getUser(@PathVariable String id) {
         return userService.fethUser(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());

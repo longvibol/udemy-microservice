@@ -33,11 +33,11 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public Optional<UserResponse> fethUser(Long id) {
+    public Optional<UserResponse> fethUser(String id) {
         return userRepository.findById(id).map(this::mapToUserResponse);
     }
 
-    public boolean updateUser(Long id, UserRequest updateUserRequest) {
+    public boolean updateUser(String id, UserRequest updateUserRequest) {
         return userRepository.findById(id)
                 .map(user -> {
                     updateUserFromUserRequest(user, updateUserRequest);
@@ -46,7 +46,7 @@ public class UserService {
                 }).orElse(false);
     }
 
-    public boolean deleteUser(Long id) {
+    public boolean deleteUser(String id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             return true;
