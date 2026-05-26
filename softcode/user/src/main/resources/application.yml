@@ -6,4 +6,4 @@ spring:
     name: user-service
 
   mongodb:
-    uri: "mongodb+srv://vibollong:qNnH3fGfubMg0Iv3@users-db.ickye0u.mongodb.net/user-service?retryWrites=true&w=majority&appName=users-db"
+    uri: mongodb://admin:admin@localhost:27018/user_db?authSource=admin

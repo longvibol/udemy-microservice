@@ -1,0 +1,45 @@
+Configuration Management : 
+
+1- Database Configuration : connection to database 
+2- Hibernate/ JPA Settings: connection to framework 
+3- Server Configuration: port config 
+4- Email Configuration: communication to other 
+5- logging Configuration: setting for Debug or info
+6- Application-Specific Properties : config api key (myapp.api.key=your_api_key)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
