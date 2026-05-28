@@ -1,0 +1,106 @@
+@Value("${build.id}") ប្រើសម្រាប់ចាប់ទិន្នន័យ Variable from the application. 
+
+- Value annotation in spring boot is simply used to inject values into the variable from external sources,
+
+such as application.properties or application
+
+1-Explain on the application.yml
+
+spring:
+ application:
+  name:config
+ profiles:
+  active: dev
+
+build:
+  id: 122
+  version: 2.2.2
+  name: "Default-Build"
+  type: "Default Build"
+
+
+- profiles: active: dev វាធ្វើការចាប់យក dev មកធ្វើការ configure 
+
+in another application-dev.yml : 
+
+build:
+  id: 101
+  version: 1.2.3
+  name: "Dev-Build"
+  type: "Development Build"
+
+--------------------------------------------------
+
+
+យើងអាចធ្វើការកំណត់អោយ តម្លៃទៅ @Value ដោយអោយវាចាប់យក តម្លៃ Default 
+
+package com.info.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class BuildInfoController {
+	
+	@Value("${build.id:default}")
+	private String buildId;
+	
+	@Value("${build.version:default}")
+	private String buildVersion;
+	
+	@Value("${build.name:default}")
+	private String buildName;
+	
+	@GetMapping("/build-info")
+	public String getBuildInfo() {
+		return "Build ID: " + buildId + ", Version: "+ buildVersion + ", Name: " + buildName;
+	}
+	
+}
+
+
+-- this is where we can set the default
+
+@Value("${build.id:default}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

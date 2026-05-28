@@ -1,0 +1,151 @@
+Picking Data from OS environment 
+
+1- env
+
+ >> $env:OS
+
+Ex:
+
+PS C:\Users\home> $env:OS
+Windows_NT
+
+
+2- profile 
+
+PS C:\Users\home> $env:USERPROFILE
+C:\Users\home
+
+3- Set profile 
+
+==========================================================
+
+package com.info.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class BuildInfoController {
+	
+	@Value("${OS:default}")
+	private String buildId;
+	
+	@Value("${JAVA_HOME:default}")
+	private String buildVersion;
+	
+	@Value("${PROCESSOR_LEVEL:default}")
+	private String buildName;
+	
+	@GetMapping("/build-info")
+	public String getBuildInfo() {
+		return "Build ID: " + buildId + ", Version: "+ buildVersion + ", Name: " + buildName;
+	}
+	
+}
+
+
+========================================================== Result :
+
+Build ID: Windows_NT, Version: C:\Program Files\Java\jdk-21, Name: 6
+
+
+--------------------------------------------------------------------------------------
+
+
+set BUILD_ID=12345
+set BUILD_VERSION=1.0.0
+set BUILD_NAME=ProductionService
+
+----------------------------
+
+1- Crete Jar file 
+
+>> mvn clean package
+
+2- jar file 
+
+Directory of C:\Users\home\Desktop\UdemyCourse\udemy-microservice\softcode\config\target
+
+
+3- Run Jar file 
+
+Build ID: 12345, Version: 1.0.0, Name: ProductionService
+
+
+>> java -jar config-0.0.1-SNAPSHOT.jar
+
+
+Result : GET : http://localhost:8080/build-info
+
+==> Build ID: 12345, Version: 1.0.0, Name: ProductionService
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
