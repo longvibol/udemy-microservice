@@ -1,0 +1,18 @@
+- Config Server ជាកន្លែងដែល ពេល Microservice មួយៗនឹង ពេលដែលវា ត្រូវការ configuration វានឹងទៅរកពី Config server 
+
+- Spring Cloud Config Servier: វាជា ផ្នែកមួយនៅក្នុង Spring Cloud Project
+
+It's a suite of tools specifically designed for building and managing cloud native applications ជាកម្មវិធីជំនួយមួយក្នុងការ បង្កើត និងរៀបចំ 
+កម្មវិធីនីមួយៗ
+
+==> ចឹងមានន័យថាសម្រាប់ Spring Cloud Config Server យើងអាចអោយវា យកទិន្នន័យនឹងពីណារមកបាន ដូចជា Git, File System, or Database 
+
+--------------------------------
+
+1- Spring cloud config 
+
+- វាមានពីរ គឺយើងធ្វើការបង្កើត សម្រាប់ server and សម្រាប់ client ដែលត្រូវការ ប្រើប្រាស់ spring cloud នឹង​
+
+Link: https://spring.io/projects/spring-cloud-config
+
+==> Spring Cloud Config provides server and client-side support for externalized configuration in a distributed system.
