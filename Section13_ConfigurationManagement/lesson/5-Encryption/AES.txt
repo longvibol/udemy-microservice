@@ -1,0 +1,32 @@
+- AES is a secure way to lock and unlock data using a secret key. 
+
+- យើងមាន Key ហើយយើងធ្វើការ encrypt បន្ទាប់មកយើងត្រូវធ្វើការ decrypted ឡើងវិញដោយប្រើប្រាស់ Key នឹងវិញ 
+
+- AES is commonly used in Spring Cloud Config Server to protect sensitive configuration value like passwords and API keys!
+
+- it working with spring cloud config server 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

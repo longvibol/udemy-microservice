@@ -2,7 +2,7 @@ spring:
   application:
     name: configdemo
   profiles:
-    active: default
+    active: prod
   config:
     import: optional:configserver:http://localhost:8888
 
@@ -10,3 +10,9 @@ build:
   id: ${ID}
   version: ${VERSION}
   name: ${NAME}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
