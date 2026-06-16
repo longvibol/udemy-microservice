@@ -1,16 +1,38 @@
+server:
+  port: 8888
+
 spring:
   application:
     name: configserver
-
   cloud:
     config:
       server:
         git:
           uri: https://github.com/longvibol/app-configuration.git
-          username: ${GIT_USER}
+          username: longvibol
           password: ${GIT_TOKEN}
           default-label: main
           clone-on-start: true
 
-server:
-  port: 8888
+encrypt:
+  key-store:
+    location: config-server.jks
+    password: mypass
+    alias: config-server-key
+# 1. Activate the jdbc profile here
+#  profiles:
+#    active: jdbc
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/configdb
+#    username: root
+#    password: admin
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  cloud:
+#    config:
+#     server:
+#      jdbc:
+#       sql: "SELECT PROP_KEY, PROP_VALUE FROM PROPERTIES WHERE APPLICATION = ? AND PROFILE = ? AND LABEL =?"
+#       default-label: main
+
+#encrypt:
+#  key: "LONGVIBOL123"

@@ -1,0 +1,55 @@
+-HR team check
+1.The HSC Team will prepare the data for the Employee Module and Attendance Module Data Migration Templates from 21-May-2026 to 29-May-2026.
+
+
+Check first: 
+3.Explanation of the status of issues submitted by the HSC Team in the Issue Tracking System that have been resolved by the ACE Team.
+
+Good
+4.If any issues arise during the training, the ACE team will resolve them immediately.
+
+Verify 
+5.How will the delays caused by issues encountered during the training be resolved?(Vibol)
+
+HSC Prepare Task :
+6.First, a 1-day or 2-day UAT testing will be conducted with Mr. Long Vibol, Mr. Phrom Phannet, and Ms. Sovanna. If everything is satisfactory, it will be submitted to the Director and then training will be provided to the HSC teams.(ACE Team)
+
+
+Mr.Pannet will support
+7.Two separate databases will be provided on the HSC UAT server. 
+One database will be used for UAT, 
+and the other will be used for training purposes.(ACE Team)
+
+
+8.ACE's Local Server cannot be used because the fingerprint data is connected only to the HSC server.(ACE Team)
+The updated training timeline will be shared.(ACE Team)
+
+9.The Director Role will be responsible for checking the reports of the Organization, Employee, and Attendance Modules.
+
+10.Only the HR Payroll Team will join the Payroll Module Training.(Sovanna)
+
+-Review blue print work flow 
+11.If the Director performs the movement process directly, is approval still required?(Sovanna)
+
+-Reviw blue print work flow
+12.In the current system, if the Director performs the Movement process, approval is still required. The Director can approve it 
+personally, or alternatively, approval can be assigned to HR.(ACE Team)
+
+- HR Requirment 
+13.The system can store payroll history data for how many years.
+
+-Review 
+14.The required payroll reports have been shared on the shared drive.
+
+
+
+
+
+
+
+
+
+
+
+
+
