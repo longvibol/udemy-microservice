@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: user-service
-
-  mongodb:
-    uri: mongodb://admin:admin@localhost:27018/user_db?authSource=admin
+  profiles:
+    active: user-service
+  config:
+    import: optional:configserver:http://localhost:8888

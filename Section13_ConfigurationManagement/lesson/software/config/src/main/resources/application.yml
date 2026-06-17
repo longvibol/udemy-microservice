@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: configdemo
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health # Adds 'refresh' to the allowed endpoints
+
+build:
+  id: ${ID}
+  version: ${VERSION}
+  name: ${NAME}
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: refresh
