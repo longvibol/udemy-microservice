@@ -1,0 +1,9 @@
+spring:
+  mongodb:
+    uri: mongodb://admin:admin@localhost:27018/user_db?authSource=admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health
