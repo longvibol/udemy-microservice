@@ -1,0 +1,7 @@
+Communication: 
+
+- Synchronous Communication: RestTemplate, OpenFeign, RestClient,WebClient, http interfaces 
+
+1- http clients (like Apache HttpClient) or raw socket programming. ធ្វើខ្លួនឯងច្រើន Premative 
+2- Spring introduce "RestTemplate" : need also the explicit configuration for aspects 
+3- 
