@@ -4,6 +4,14 @@ spring:
     username: admin
     password: admin
     driver-class-name: org.postgresql.Driver
+  # Add this section
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false # Recommended to disable for microservices performance
 
 management:
   endpoints:
