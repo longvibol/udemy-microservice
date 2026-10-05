@@ -5,8 +5,16 @@ spring:
     password: admin
     driver-class-name: org.postgresql.Driver
   
-  # Automatically names your RabbitMQ connections as "order-service" 
-  # in the RabbitMQ dashboard you showed earlier
+  # Indent 'jpa' by two spaces to align it under 'spring'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+  # Indent 'rabbitmq' by two spaces as well
   rabbitmq:
     connection-name-strategy: "spring.application.name"
 
