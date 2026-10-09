@@ -1,0 +1,4 @@
+- Rest Template is the spring class or class in spring that help you to create http request to external api or microservices 
+- think it as a way that can talk to other application over the internet. 
+
+

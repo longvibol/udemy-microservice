@@ -1,0 +1,38 @@
+Communication: 
+
+- Synchronous Communication: RestTemplate, OpenFeign, RestClient, WebClient, http interfaces 
+
+1- http clients (like Apache HttpClient) or raw socket programming. ធ្វើខ្លួនឯងច្រើន Premative 
+2- Spring introduce "RestTemplate" : need also the explicit configuration for aspects 
+
+- Client-side load balancing & Service Discovery : Eureka service discovery 
+
+- Declarative HTTP Clients: OpenFeign: they can define the java interface annotated with mapping annotations. 
+
+
+- New Rest Clients inspiring:
+
+1- RestClient 
+2- WebClient 
+3- Http Interface 
+
+
+------------------------------------
+
+I. WebClient:
+
+- Introduing in spring 5 webflux ( Mono and Flux) 
+
+II. RestClient (New in spring 6) 
+
+III. HTTP Interface (spring6)
+
+- dynamic proxy implementation : it no need to have spring cloud 
+
+
+
+
+
+
+
+

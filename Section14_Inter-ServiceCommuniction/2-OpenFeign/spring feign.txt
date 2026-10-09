@@ -1,0 +1,12 @@
+- OpenFeign: is the project in the spring cloud
+- https://spring.io/projects/spring-cloud-openfeign
+
+==> OpenFeign is the Declarative REST Client : យើងអាបង្កើតវាបានដោយប្រើប្រាស់  Interface. 
+
+for the http request : RestTemplate is older that OpenFeign:
+
+in the restTemplate : we crate the template but the openfeign create proxy 
+- openFeign : spring use httpclient now day. 
+
+
+
