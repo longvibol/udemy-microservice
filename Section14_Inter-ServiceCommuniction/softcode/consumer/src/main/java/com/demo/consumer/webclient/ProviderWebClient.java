@@ -8,17 +8,13 @@ import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
-public class ProviderWebClient {
-	
-	private final WebClient webClient;
-	
+public class ProviderWebClient {	
+	private final WebClient webClient;	
 	public Mono<String> getInstanceInfo() {
 		
 		return webClient.get()
 			.uri("/instance-info")
 			.retrieve()
 			.bodyToMono(String.class);
-
 	}
-
 }
