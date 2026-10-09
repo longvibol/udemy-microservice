@@ -1,0 +1,4 @@
+https://docs.spring.io/spring-framework/reference/integration/rest-clients.html
+
+
+- RestClient — synchronous client with a fluent API
